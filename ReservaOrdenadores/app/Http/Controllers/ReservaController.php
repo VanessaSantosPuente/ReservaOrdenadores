@@ -11,15 +11,15 @@ class ReservaController extends Controller
      */
     public function index()
     {
-        //
+        return view('reservas.index');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($fecha)
     {
-        //
+
     }
 
     /**
