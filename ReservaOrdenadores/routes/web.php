@@ -1,4 +1,6 @@
 <?php
+use App\Http\Controllers\InicioController;
+use App\Http\Controllers\ReservaController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', InicioController::class)->name('inicio');
+
+Route::get('reservas', [ReservaController::class,'index'])->name('reservas.index');
+Route::get('reservas/{fecha}', [ReservaController::class,'create'])->name('reservas.create')->middleware('auth');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
