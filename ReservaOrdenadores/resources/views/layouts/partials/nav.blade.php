@@ -3,7 +3,7 @@
         <div class="flex flex-grow">
             <img src="{{asset('assets/imagenes/logo.jfif')}}" alt="logo miguel">
         </div>
-        <div id="menu" class="hidden flex-grow  w-full justify-between items-center absolute top-40 left-0 bg-green-800 py-14 px-8 lg:flex lg:relative lg:top-0  lg:py-0 lg:px-0 sm:px-14">
+        <div id="menu" class="hidden flex-grow  w-full justify-between items-center absolute top-40 left-0 bg-blue-800 py-14 px-8 lg:flex lg:relative lg:top-0  lg:py-0 lg:px-0 sm:px-14">
             <div class="flex flex-col text-center lg:flex-row">
                 @if(Auth::check())
                 <a href="{{route('logout')}}" class="bblanco mb-1 lg:mr-4 lg:mb-0" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesion</a>
