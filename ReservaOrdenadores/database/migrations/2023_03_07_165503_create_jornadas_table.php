@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('idHora');
             $table->foreign("idHora")->references("id")->on("horas")->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();
+
         });
     }
 
