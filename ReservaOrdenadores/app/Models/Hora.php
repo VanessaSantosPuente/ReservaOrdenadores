@@ -16,3 +16,4 @@ class Hora extends Model
         return $this->hasMany(Jornada::class);
     }
 }
+
