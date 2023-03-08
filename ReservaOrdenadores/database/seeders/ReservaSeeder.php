@@ -14,8 +14,9 @@ class ReservaSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+        public function run(): void
     {
+        /*
         $reserva = new Reserva();
         $reserva->idJornada = 2;
         $reserva->idUser = 1;
@@ -44,5 +45,17 @@ class ReservaSeeder extends Seeder
         $reserva4->idJornada = 1;
         $reserva4->idOrdenador = 2;
         $reserva4->save();
+        */
+        $ordenadores = Ordenador::all();
+        $jornadas = Jornada::all();
+
+        foreach($jornadas as $jornada){
+            foreach($ordenadores as $ordenador){
+                $reserva = new Reserva();
+                $reserva->idJornada = $jornada->id;
+                $reserva->idOrdenador = $ordenador->id;
+                $reserva->save();
+            }
+        }
     }
 }
