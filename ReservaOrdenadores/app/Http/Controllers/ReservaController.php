@@ -49,14 +49,16 @@ class ReservaController extends Controller
     public function edit(string $fecha)
     {
         $reservasLista = array();
+        $ordenadores = Ordenador::all();
         $fechaArray = explode('-', $fecha);
         $jornadas = Jornada::where('anio',intval($fechaArray[0]))->where('mes',intval($fechaArray[1]))->where('dia',intval($fechaArray[2]))->get();
 
         foreach($jornadas as $jornada){
-            $reservas = Reserva::where('idJornada', $jornada)->get();
-            array_push($reservasLista, $reservas);
+            foreach($ordenadores as $ordenador) {
+                $reservas = Reserva::where('idJornada', $jornada->id)->where('idOrdenador',$ordenador->id)->get();
+                array_push($reservasLista, $reservas);
+            }
         }
-        $ordenadores = Ordenador::all();
         return view('reservas.edit', compact(['reservasLista','ordenadores']));
     }
 
