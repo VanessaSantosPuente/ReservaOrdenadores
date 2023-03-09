@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Ordenador;
+use App\Models\Hora;
+use App\Models\Reserva;
+use Illuminate\Support\Facades\DB;
 
 class ReservaController extends Controller
 {
@@ -17,9 +21,9 @@ class ReservaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create($fecha)
+    public function create()
     {
-
+        //
     }
 
     /**
@@ -41,9 +45,11 @@ class ReservaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $fecha)
     {
-        //
+        $resrevas = Reserva::all();
+        $ordenadores = Ordenador::all();
+        return view('reservas.create', compact(['reservas','ordenadores']));
     }
 
     /**
