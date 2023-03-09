@@ -14,11 +14,11 @@ class HoraSeeder extends Seeder
     public function run(): void
     {
         $hora = new Hora();
-        $hora->intervalo = '8:30-9:20';
+        $hora->intervalo = '08:30-09:20';
         $hora->save();
 
         $hora1 = new Hora();
-        $hora1->intervalo = '9:20-10:10';
+        $hora1->intervalo = '09:20-10:10';
         $hora1->save();
 
         $hora2 = new Hora();

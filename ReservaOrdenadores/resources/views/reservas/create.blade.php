@@ -8,9 +8,16 @@
             @foreach ($ordenadores as $ordenador)
             <div>
                 <figure>
-                    <img src="{{asset('assets/imagenes/portatil_verde.png')}}" alt="{{$ordenador->nombre}}}">
-                    <figcaption>$ordenador['name']</figcaption>
+                <figcaption>{{$ordenador->nombre}}</figcaption>
+                    <img src="{{asset('assets/imagenes/portatil_verde.png')}}" alt="{{$ordenador->nombre}}}" height="200" width="200">
                 </figure>
+            </div>
+            <div>
+                @foreach ($reservasLista as $reserva)
+                    @if ($reserva->idOrdenador == $ordenador->id)
+                        <button>{{substr($reserva->jornada->hora->intervalo, 0, 5)}}</button>
+                    @endif
+                @endforeach
             </div>
             @endforeach
     </div>

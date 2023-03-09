@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ordenador;
 use App\Models\Hora;
+use App\Models\Jornada;
 use App\Models\Reserva;
 use Illuminate\Support\Facades\DB;
 
@@ -23,8 +24,7 @@ class ReservaController extends Controller
      */
     public function create()
     {
-        $reservas = Reserva::all();
-        return view('reservas.create', compact(['reservas','fecha']));
+        //
     }
 
     /**
@@ -48,9 +48,16 @@ class ReservaController extends Controller
      */
     public function edit(string $fecha)
     {
-        $resrevas = Reserva::all();
+        $reservasLista = array();
+        $fechaArray = explode('-', $fecha);
+        $jornadas = Jornada::where('anio',intval($fechaArray[0]))->where('mes',intval($fechaArray[1]))->where('dia',intval($fechaArray[2]))->get();
+
+        foreach($jornadas as $jornada){
+            $reservas = Reserva::where('idJornada', $jornada)->get();
+            array_push($reservasLista, $reservas);
+        }
         $ordenadores = Ordenador::all();
-        return view('reservas.create', compact(['reservas','ordenadores']));
+        return view('reservas.edit', compact(['reservasLista','ordenadores']));
     }
 
     /**
