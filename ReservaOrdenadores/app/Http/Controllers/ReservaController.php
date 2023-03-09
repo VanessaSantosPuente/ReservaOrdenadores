@@ -67,7 +67,10 @@ class ReservaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $r = Reserva::where("id",$id)->first();
+        $r->idUser = auth()->user()->id;
+        $r->save();
+        return view('reservas.index');
     }
 
     /**

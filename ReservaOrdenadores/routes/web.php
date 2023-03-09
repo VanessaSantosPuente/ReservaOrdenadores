@@ -19,6 +19,7 @@ Route::get('/', InicioController::class)->name('inicio');
 
 Route::get('reservas', [ReservaController::class,'index'])->name('reservas.index');
 Route::get('reservas/{fecha}', [ReservaController::class,'edit'])->name('reservas.edit')->middleware('auth');
+Route::post('reservas/{fecha}', [ReservaController::class,'update'])->name('reservas.update');
 
 Route::middleware([
     'auth:sanctum',
