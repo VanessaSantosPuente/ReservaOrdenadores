@@ -19,7 +19,8 @@ class ReservaController extends Controller
      */
     public function create($fecha)
     {
-
+        $reservas = Reserva::all();
+        return view('reservas.create', compact(['reservas','fecha']));
     }
 
     /**
