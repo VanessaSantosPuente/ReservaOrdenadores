@@ -13,11 +13,11 @@ class Jornada extends Model
 
     protected $table ='jornadas';
 
-    public function Reservas(){
+    public function reservas(){
         return $this->hasMany(Reserva::class);
     }
 
-    public function Hora(){
+    public function hora(){
         return $this->belongsTo(Hora::class);
     }
 }

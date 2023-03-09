@@ -12,7 +12,7 @@ class Hora extends Model
 
     protected $table = 'horas';
 
-    public function Jornadas(){
+    public function jornadas(){
         return $this->hasMany(Jornada::class);
     }
 }

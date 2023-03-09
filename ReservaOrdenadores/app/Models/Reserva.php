@@ -13,15 +13,15 @@ class Reserva extends Model
     use HasFactory;
     protected $table = 'reservas';
 
-    public function Ordenador(){
+    public function ordenador(){
         return $this->belongsTo(Ordenador::class);
     }
 
-    public function Usuario(){
+    public function usuario(){
         return $this->belongsTo(User::class);
     }
 
-    public function Jornada(){
+    public function jornada(){
         return $this->belongsTo(Jornada::class);
     }
 }
