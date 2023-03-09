@@ -55,7 +55,7 @@ class ReservaController extends Controller
 
         foreach($jornadas as $jornada){
             foreach($ordenadores as $ordenador) {
-                $reservas = Reserva::where('idJornada', $jornada->id)->where('idOrdenador',$ordenador->id)->get();
+                $reservas = Reserva::where('idJornada', $jornada->id)->where('idOrdenador',$ordenador->id)->first();
                 array_push($reservasLista, $reservas);
             }
         }
