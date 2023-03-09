@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', InicioController::class)->name('inicio');
 
 Route::get('reservas', [ReservaController::class,'index'])->name('reservas.index');
-Route::get('reservas/{fecha}', [ReservaController::class,'create'])->name('reservas.create')->middleware('auth');
+Route::get('reservas/{fecha}', [ReservaController::class,'edit'])->name('reservas.edit')->middleware('auth');
 
 Route::middleware([
     'auth:sanctum',

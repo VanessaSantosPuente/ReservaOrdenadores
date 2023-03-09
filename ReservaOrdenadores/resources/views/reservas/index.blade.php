@@ -10,11 +10,12 @@
                         var fecha = new Date(calendario.value);
                         var fechahoy = Date.now();
                         if(fecha.getTime()>=fechahoy){
-                            /*var xhr =  new XMLHttpRequest();
-                            xhr.open("POST","index.blade.php",true);
-                            xhr.send(fecha);*/
-                            document.cookie = "cookiefecha = " + fecha;
-                            location. reload()
+                            let dia = fecha.getDate();
+                            let mes = parseInt(fecha.getMonth())+1;
+                            let anio = fecha.getFullYear();
+                            let cadenaFecha=`${anio}-${mes}-${dia}`;
+                            document.cookie = "cookiefecha = " + cadenaFecha;
+                            location. reload();
                         }
                     }
                 </script>
@@ -22,7 +23,7 @@
                 if (isset($_COOKIE['cookiefecha'])) {
                     $fecha = $_COOKIE['cookiefecha']
                 ?>
-                    <a href="{{route('reservas.create', $fecha )}}" class="bazul">Reservar</a>
+                    <a href="{{route('reservas.edit', $fecha )}}" class="bazul">Reservar</a>
                 <?php
                 }
                 ?>
