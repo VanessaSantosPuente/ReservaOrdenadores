@@ -14,14 +14,14 @@ class Reserva extends Model
     protected $table = 'reservas';
 
     public function ordenador(){
-        return $this->belongsTo(Ordenador::class);
+        return $this->belongsTo(Ordenador::class, 'idOrdenador', 'id');
     }
 
     public function usuario(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'idUser', 'id');
     }
 
     public function jornada(){
-        return $this->belongsTo(Jornada::class);
+        return $this->belongsTo(Jornada::class, 'idJornada', 'id');
     }
 }

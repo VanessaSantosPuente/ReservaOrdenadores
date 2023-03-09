@@ -18,6 +18,6 @@ class Jornada extends Model
     }
 
     public function hora(){
-        return $this->belongsTo(Hora::class);
+        return $this->belongsTo(Hora::class, 'idHora', 'id');
     }
 }
