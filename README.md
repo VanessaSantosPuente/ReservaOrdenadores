@@ -11,3 +11,15 @@
 3.Segumiento
 -  Diario.pdf
 -  Issues
+>
+4.Visual de la web
+>
+![alt index](imagenes_reserva/index.PNG)
+>
+Visual index
+>
+![alt reserva1](imagenes_reserva/reservas1.PNG)
+>
+![alt reserva1](imagenes_reserva/reservas2.PNG)
+>
+Visual de la reserva (edit)
