@@ -67,10 +67,12 @@ class ReservaController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $fecha = $_COOKIE['cookiefecha'];
         $r = Reserva::where("id",$id)->first();
         $r->idUser = auth()->user()->id;
         $r->save();
-        return view('reservas.index');
+        //return view('reservas.edit', $fecha);
+        return redirect()->action([ReservaController::class,'index'])->with('alert','Reserva Realizada');
     }
 
     /**

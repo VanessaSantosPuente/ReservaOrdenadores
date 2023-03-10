@@ -12,6 +12,6 @@ class Ordenador extends Model
     protected $table = 'ordenadores';
 
     public function reservas(){
-        return $this->hasMany(Reserva::class);
+        return $this->hasMany(Reserva::class, 'id', 'idOrdenador');
     }
 }

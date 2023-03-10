@@ -10,13 +10,24 @@
                         var fecha = new Date(calendario.value);
                         var fechahoy = Date.now();
                         if(fecha.getTime()>=fechahoy){
+                            document.cookie = "cookiefecha=; max-age=0";
                             let dia = fecha.getDate();
                             let mes = parseInt(fecha.getMonth())+1;
                             let anio = fecha.getFullYear();
                             let cadenaFecha=`${anio}-${mes}-${dia}`;
                             document.cookie = "cookiefecha = " + cadenaFecha;
                             location. reload();
+                        }else{
+                            document.cookie = "cookiefecha=; max-age=0";
+                            location. reload();
                         }
+                    }
+                </script>
+                <script>
+                    var msg = '{{Session::get('alert')}}';
+                    var existe = '{{Session::has('alert')}}';
+                    if(existe){
+                        alert(msg);
                     }
                 </script>
                 <?php
