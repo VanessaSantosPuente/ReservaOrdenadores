@@ -23,3 +23,13 @@ Visual index
 ![alt reserva1](imagenes_reserva/reservas2.PNG)
 >
 Visual de la reserva (edit)
+>
+5.Archivos VirtualHost
+>
+![alt index](imagenes_reserva/xampp_vhost.PNG)
+>
+Archivo vhost de xampp
+>
+![alt index](imagenes_reserva/windows_host.PNG)
+>
+Archivo hosts de Windows
