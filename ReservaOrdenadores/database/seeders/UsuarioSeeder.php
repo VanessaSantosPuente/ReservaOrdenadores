@@ -22,7 +22,7 @@ class UsuarioSeeder extends Seeder
         $usuario1 = new User();
         $usuario1->name = 'Vanessa';
         $usuario1->email = 'vanessa@gmail.com';
-        $usuario1->password = bcrypt('javier');
+        $usuario1->password = bcrypt('vanessa');
         $usuario1->save();
 
         $usuario2 = new User();

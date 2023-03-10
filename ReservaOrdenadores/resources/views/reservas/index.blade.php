@@ -8,8 +8,19 @@
                 <script>
                     function guardarFecha(){
                         var fecha = new Date(calendario.value);
-                        var fechahoy = Date.now();
-                        if(fecha.getTime()>=fechahoy){
+                        var fechahoy = new Date(Date.now());
+                        if(fecha.getDay()==0||fecha.getDay()==6){
+                            document.cookie = "cookiefecha=; max-age=0";
+                            location. reload();
+                        }else if(fecha.getTime()>fechahoy.getTime()){
+                            document.cookie = "cookiefecha=; max-age=0";
+                            let dia = fecha.getDate();
+                            let mes = parseInt(fecha.getMonth())+1;
+                            let anio = fecha.getFullYear();
+                            let cadenaFecha=`${anio}-${mes}-${dia}`;
+                            document.cookie = "cookiefecha = " + cadenaFecha;
+                            location. reload();
+                        }else if(fecha.getDate()==fechahoy.getDate()&&fecha.getMonth()==fechahoy.getMonth()&&fecha.getFullYear()==fechahoy.getFullYear()){
                             document.cookie = "cookiefecha=; max-age=0";
                             let dia = fecha.getDate();
                             let mes = parseInt(fecha.getMonth())+1;
