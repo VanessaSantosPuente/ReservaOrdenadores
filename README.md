@@ -3,9 +3,11 @@
 
 1.Proyecto
 - Carpeta ReservaOrdenadores
-2. Guia de estilos y prototipos
+>
+2.Guia de estilos y prototipos
 - Proyecto_Intramodular.docx
 - Proyecto_Intramodular.pdf
-3. Segumiento
+>
+3.Segumiento
 -  Diario.pdf
 -  Issues
